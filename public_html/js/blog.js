@@ -27,7 +27,7 @@ $(function () {
            
           Backendless.Persistence.of(Posts).remove("446C26E2-1FE0-98FF-FF21-BF824D7BAD00");
            
-        });
+        })
         
 });
 

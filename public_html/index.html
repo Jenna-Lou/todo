@@ -25,7 +25,7 @@
    
   
         <header>
-            <nav class="teal darken-4">
+            <nav class="black">
                 <div class="nav-wrapper">
                     
                     <ul class="medium">
@@ -48,11 +48,11 @@
                 </div>
             </div>
         </main>
-        <footer class="page-footer teal darken-2">
+        <footer class="page-footer black">
             <div class="container">
                 <p><a href="#">Back to the top</a></p>
             </div>
-            <div class="footer-copyright teal darken-3">
+            <div class="footer-copyright black">
                 <div class="container">
                     @2016 Jenna Lou
                 </div>
@@ -71,6 +71,7 @@
           <div class="blog-post">
           <h2 class="blog-post-title">{{title}}</h2>
           <p class="blog-post-meta">At {{format created}} by {{authorEmail}}</p>
+          <button class ="btn btn-large waves-effect waves-light  teal darken-2 delete-post"><a href="index.html" class="white-text">Delete</a></button>
           <div>{{{content}}}</div>
           </div>
           {{/each}}

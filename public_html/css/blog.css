@@ -2,6 +2,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url("http://cosmoplast.biz/wp-content/uploads/2016/01/wood-desk-background-hd-wallpaper-background-id8-1920x1200-pattern-wood.jpg");
+    background-size: 150%;
 }
 
 main {
@@ -26,7 +28,7 @@ main {
 }
 
 html {
-   font-family: 'Coming Soon', cursive;
+    font-family: 'Righteous', cursive;
   }
     .content {
         padding-top: 57px;

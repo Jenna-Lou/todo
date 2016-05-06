@@ -1,41 +1,41 @@
- <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
+ <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="css/blog.css">
-     <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
       <link rel="icon" href="data:;base64,iVBORwOKGgo=">
+
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+   
+
     </head>
 
     <body>
-         <!-- Dropdown Trigger -->
+              <!-- Dropdown Trigger -->
   <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
 
   <!-- Dropdown Structure -->
   <ul id='dropdown1' class='dropdown-content'>
     <li><a href="index.html">Home</a></li>
     <li><a href="admin.html">Login</a></li>
-    <li><a href="task.html">Add New Task</a></li>
+    <li><a href="login.html">Add New Task</a></li>
     <li class="divider"></li>
   </ul>
-   
-  
         <header>
             <nav class="black">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo center">Todo List</a>
+                    <a href="index.html" class="brand-logo center">Todo List</a>
+
                 </div>
             </nav>
         </header>
         <main>
             <div class="container">
                 <div class="row">
-                    <h1 class="center-align">Tasks</h1>
+                    <h1 class="center-align">My Todo List</h1>
                 </div>
                 <div class="row">
                     <div class="col s12 main-container">
@@ -57,29 +57,11 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="libs/backendless.js"></script>
-      <script type="text/javascript" src="js/blog.js"></script>
+      <script type="text/javascript" src="js/task.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
       <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
       
-      <script id="blogs-template" type="text/x-handlebars-template">
-          {{#each posts}}
-    <div class="blog-post">
-          <h2 class="blog-post-title">{{title}}</h2>
-          <p class="blog-post-meta">At {{format created}} by {{authorEmail}}</p>
-          <button class ="btn btn-large waves-effect waves-light  teal darken-2 white-out-post">Mark as Complete</button>
-          <button class ="btn btn-large waves-effect waves-light  teal darken-2 delete-post"><a href="index.html" class="white-text">Delete</a></button>
-          <div>{{{content}}}</div>
-          </div>
-          {{/each}}
-      </script>
-      
-      <script id="check-done-template" type="text/x-handlebars-template">
-       <div class="white-text">
-       <center><h4 class="blog-post meta italic">Task has been marked as complete</h4></center>
-       <center><button class ="btn btn-large waves-effect waves-light  teal darken-2 white-in-post"><a href="index.html">Return to Home</a></button></center>
-       </div>
-      </script>
       
       <script id="add-blog-template" type="text/x-handlebars-template">
           <h2>Add a new Task</h2>

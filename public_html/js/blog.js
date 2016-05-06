@@ -23,9 +23,22 @@ $(function () {
         
         $('.main-container').html(blogHTML);    
         
+          $(document).on('click', '.white-out-post', function(){
+         var checkListScript = $("#check-done-template").html();
+         var checkListTemplate = Handlebars.compile(checkListScript);
+         $('.main-container').html(checkListTemplate);
+     });
+     
+     $(document).on('click','.white-in-post', function(){
+         var uncheckListScript = $("#check-done-template").html();
+         var uncheckListTemplate =  Handlebars.compile(uncheckListScript);
+         $('.main-container').html(uncheckListTemplate);
+     });
+
+        
         $(document).on('click', '.delete-post', function(){
            
-          Backendless.Persistence.of(Posts).remove("446C26E2-1FE0-98FF-FF21-BF824D7BAD00");
+          Backendless.Persistence.of(Posts).remove("8DD868B9-2A3B-47B9-FFD7-0F6C9EB6F300");
            
         });
         
@@ -48,3 +61,35 @@ function Posts (args) {
       alignment: 'left' // Displays dropdown with edge aligned to the left of button
     }
   );
+  
+  $(document).on('click', '.add-blog', function(){
+        var addBlogScript = $("#add-blog-template").html();
+        var addBlogTemplate = Handlebars.compile(addBlogScript);
+    
+        $('.main-container').html(addBlogTemplate);
+    });
+    $(document).on('submit', '.form-add-blog', function(event){
+        event.preventDefault();
+        
+        var data = $(this).serializeArray(),
+            title = data[0].value,
+            content = data[1].value;
+            
+            if (content === "" || title ===""){
+                Materialize.toast('Cannot leave title or content empty!', 4000);
+            }
+            else{
+        var dataStore = Backendless.Persistence.of(Posts);
+        
+        var postObject = new Posts({
+           title: title,
+           content: content
+          // authorEmail: Backendless.UserService.getCurrentUser().email
+        });
+        
+        dataStore.save(postObject);
+        
+        this.title.value = "";
+        this.content.value = "";
+    }
+    });
